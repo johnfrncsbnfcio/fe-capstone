@@ -1,0 +1,15 @@
+.container {
+  width: 900px;
+  margin: 0 auto;
+}
+
+.gallery {
+  width: 900px;
+  line-height: 0;
+}
+
+img {
+  width: 15%;
+  object-fit: cover;
+  cursor: pointer;
+}
