@@ -8,7 +8,7 @@ import "./gallery.css"
 const Gallery = () => {
 
     const ICON_URL = "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/icons/hero_";
-
+// background-image: url("https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/herogrid/filter-str-active.png");
     const [query, setQuery] = useState("");
     const [data, setData] = useState([]);
 
