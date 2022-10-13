@@ -31,7 +31,7 @@ app.get('/heroes', cors(corsOptions), function (req, res) {
         a.localized_name > b.localized_name ? 1 : -1,
     );
 
-    q ? res.json(search(heroes).slice(0, 10)) : res.json(heroes);
+    q ? res.json(search(heroes)) : res.json(heroes);
 });
 
 app.listen(PORT_NUMBER, () => console.log('Api server running at port: ' + PORT_NUMBER));
