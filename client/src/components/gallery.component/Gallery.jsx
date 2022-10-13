@@ -10,9 +10,9 @@ const Gallery = () => {
     const [query, setQuery] = useState("");
     const [data, setData] = useState([]);
 
-	const handleChange = (data) => {
-		setQuery(data);
-	}
+    const handleChange = (data) => {
+        setQuery(data);
+    }
 
     useEffect(() => {
         const fetchData = async () => {
@@ -41,7 +41,8 @@ const Gallery = () => {
                         onClick={() => { show(hero.localized_name) }}
                         src={'https://api.opendota.com' + hero.img}
                         key={hero.id}
-                        alt={hero.localized_name} />
+                        alt=""
+                    />
                 ))}
             </div>
         </>
