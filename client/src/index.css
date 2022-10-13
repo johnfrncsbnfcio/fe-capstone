@@ -10,3 +10,7 @@
 * {
   font-family: custom-font;
 }
+
+.container {
+  margin: 0 auto;
+}

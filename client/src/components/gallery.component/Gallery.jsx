@@ -2,7 +2,6 @@ import React from 'react'
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Search from '../search.component/Search';
-
 import './gallery.css'
 
 const Gallery = () => {
@@ -38,6 +37,7 @@ const Gallery = () => {
             <div className='gallery'>
                 {data.map((hero) => (
                     <img
+                        className='image hover:scale-125 '
                         onClick={() => { show(hero.localized_name) }}
                         src={'https://api.opendota.com' + hero.img}
                         key={hero.id}

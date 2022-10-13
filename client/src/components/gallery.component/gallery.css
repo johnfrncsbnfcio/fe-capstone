@@ -1,4 +1,12 @@
 .gallery {
-    width: 900px;
-    background-color: red;
+    display: flex;
+    flex-wrap: wrap;
+    width: inherit;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.image {
+    width: 146px;
+    object-fit: cover;
 }
