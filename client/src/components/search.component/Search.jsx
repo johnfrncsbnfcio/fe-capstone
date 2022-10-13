@@ -15,18 +15,18 @@ const Search = ({type, value, id, placeholder, onChange}) => {
             className="form-control
                     block
                     w-full
-                    px-4
+                    px-10
                     py-2
                     text-xl
                     font-normal
                     text-gray-700
-                    bg-white bg-clip-padding
-                    border border-solid border-gray-300
+                    bg-gray-600 bg-clip-padding
+                    border border-solid border-gray-600
                     rounded
                     transition
                     ease-in-out
                     m-0
-                    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                    focus:text-white focus:bg-grey-600 focus:border-grey-600 focus:outline-none"
             placeholder={placeholder}
             onChange={handleChange}
         />
