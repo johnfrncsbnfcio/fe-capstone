@@ -5,7 +5,7 @@ import './App.css';
 const App = () => {
 
 	return (
-		<div className="container">
+		<div className="container bg-gray-50">
 			<Gallery />			
 		</div>
 	);

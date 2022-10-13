@@ -26,7 +26,7 @@ const Gallery = () => {
     }
 
     return (
-        <>
+        <div>
             <Search
                 type={'text'}
                 id='search'
@@ -36,16 +36,24 @@ const Gallery = () => {
             />
             <div className='gallery'>
                 {data.map((hero) => (
-                    <img
-                        className='image hover:scale-125 '
-                        onClick={() => { show(hero.localized_name) }}
-                        src={'https://api.opendota.com' + hero.img}
-                        key={hero.id}
-                        alt=""
-                    />
+                    <div className='box-style relative hover:scale-125 hover:z-20'>
+                        <img
+                            className='image'
+                            onClick={() => { show(hero.localized_name) }}
+                            src={'https://api.opendota.com' + hero.img}
+                            key={hero.id}
+                            alt=""
+                        />
+                        <a className="text-style absolute inset-0 text-bottom flex flex-col justify-end opacity-0 hover:opacity-100 duration-300" onClick={() => { show(hero.localized_name) }}>
+                            <div className="mx-auto w-full">
+                                <img src={hero.primary_attr === 'agi' ? 'https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/icons/hero_agility.png' : hero.primary_attr === 'int' ? 'https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/icons/hero_intelligence.png' : hero.primary_attr === 'str' ? 'https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/icons/hero_strength.png' : ''} className="w-6" alt="" />
+                                <p className='text-small pl-1'>{hero.localized_name}</p>
+                            </div>
+                        </a>
+                    </div>
                 ))}
             </div>
-        </>
+        </div>
     )
 }
 
