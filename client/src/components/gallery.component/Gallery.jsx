@@ -1,7 +1,7 @@
 import React from "react"
 import { useEffect, useState } from "react";
 import axios from "axios";
-import {nanoid} from "nanoid";
+import { nanoid } from "nanoid";
 import Search from "../search.component/Search";
 import "./gallery.css"
 
@@ -39,7 +39,7 @@ const Gallery = () => {
                     placeholder="Search..."
                 />
             </header>
-            <div className="gallery pt-5 pb-10" id={query.length > 1 ? 'result-start':'' }>
+            <div className="gallery pt-5 pb-10" id={query.length > 1 ? 'result-start' : ''}>
                 {data.map((hero) => (
                     <div className="box-style relative hover:scale-125 hover:z-20" key={hero.id}>
                         <img
