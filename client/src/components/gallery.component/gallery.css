@@ -6,9 +6,15 @@
     justify-content: center;
 }
 
+#result-start {
+    display: flex;
+    justify-content: flex-start;
+}
+
 .image {
     width: 146px;
     object-fit: cover;
+    margin: 2px;
 }
 
 .box-style:hover {
@@ -32,6 +38,7 @@
 .text-style div img {
     display: inline-block;
     padding: 2px;
+    margin-left: 2px;
     vertical-align: middle;
 }
 

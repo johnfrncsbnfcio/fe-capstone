@@ -1,3 +1,8 @@
+#container {
+  margin: 0 auto;
+  width: 80%;
+}
+
 img {
   width: 100%;
   background-size: cover;

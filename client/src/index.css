@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "custom-font";
-  src: url("./assets/fonts/trajanpro-bold.otf") format("otf");
+	font-family: "custom-font";
+	src: url("./assets/fonts/trajanpro-bold.otf") format("otf");
 }
 
 @tailwind base;
@@ -8,9 +8,11 @@
 @tailwind utilities;
 
 * {
-  font-family: custom-font;
+	font-family: custom-font;
 }
 
-.container {
-  margin: 0 auto;
+body {
+	background: url("https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/backgrounds/greyfade.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
 }
