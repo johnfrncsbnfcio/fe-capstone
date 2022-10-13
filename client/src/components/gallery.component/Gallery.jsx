@@ -1,14 +1,33 @@
 import React from "react"
-import { useEffect, useState } from "react";
+import { useEffect, useState, useReducer } from "react";
 import axios from "axios";
-import { nanoid } from "nanoid";
+// import { nanoid } from "nanoid";
 import Search from "../search.component/Search";
+import { FaTimesCircle } from "react-icons/fa";
 import "./gallery.css"
+import Filter from "../filter.component/Filter";
+
+
+const initialAttr = 'clear';
+const reducer = (state, action) => {
+    switch (action) {
+        case 'agi':
+            return state = 'agi';
+        case 'int':
+            return state = 'int';
+        case 'str':
+            return state = 'str';
+        case 'clear':
+            return state = 'clear';
+        default:
+            return state;
+    }
+}
 
 const Gallery = () => {
 
     const ICON_URL = "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/icons/hero_";
-// background-image: url("https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/herogrid/filter-str-active.png");
+    const [attr_value, dispatch] = useReducer(reducer, initialAttr)
     const [query, setQuery] = useState("");
     const [data, setData] = useState([]);
 
@@ -19,13 +38,21 @@ const Gallery = () => {
     useEffect(() => {
         const fetchData = async () => {
             const res = await axios.get(`http://localhost:5001/heroes?q=${query.toLowerCase()}`);
-            setData(res.data);
+            const filtered = res.data.filter(f => {
+                return (attr_value === 'clear') ? res.data :
+                    f.primary_attr === attr_value
+            });
+            setData(filtered)
         };
-        (query.length === 0 || query.length > 1) && fetchData();
-    }, [query]);
+        fetchData()
+    }, [query, attr_value]);
 
     const show = (data) => {
         alert(data);
+    }
+
+    const handleClick = (data) => {
+        dispatch(data);
     }
 
     return (
@@ -50,6 +77,12 @@ const Gallery = () => {
                         />
                     </label>
                 </form>
+                <div className="filter-box">
+                    <Filter onClick={e=>handleClick('agi')} value="agility.png"/>
+                    <Filter onClick={e=>handleClick('int')} value="intelligence.png"/>
+                    <Filter onClick={e=>handleClick('str')} value="strength.png"/>
+                    <button onClick={() => { dispatch('clear'); setQuery(''); }}><FaTimesCircle /></button>
+                </div>
             </header>
             <div className="gallery pt-5 pb-10" id={query.length > 0 ? 'result-start' : ''}>
                 {data.map((hero) => (
