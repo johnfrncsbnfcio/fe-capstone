@@ -77,10 +77,11 @@ const Gallery = () => {
                         />
                     </label>
                 </form>
-                <div className="filter-box">
-                    <Filter onClick={e=>handleClick('agi')} value="agility.png"/>
-                    <Filter onClick={e=>handleClick('int')} value="intelligence.png"/>
-                    <Filter onClick={e=>handleClick('str')} value="strength.png"/>
+                <div className="filter-box ml-5">
+                    <p className="text-white  opacity-50">Attributes: </p>
+                    <Filter classCss={`(attr_value == 'agi') ? 'opacity-100' : 'opacity-45' cursor-pointer`} onClick={e => handleClick('agi')} value="agility.png" />
+                    <Filter classCss={`(attr_value == 'int') ? 'opacity-100' : 'opacity-45' cursor-pointer`} onClick={e => handleClick('int')} value="intelligence.png" />
+                    <Filter classCss={`(attr_value == 'str') ? 'opacity-100' : 'opacity-45' cursor-pointer`} onClick={e => handleClick('str')} value="strength.png" />
                     <button onClick={() => { dispatch('clear'); setQuery(''); }}><FaTimesCircle /></button>
                 </div>
             </header>
