@@ -14,7 +14,6 @@ const Search = ({type, value, id, placeholder, onChange}) => {
             id={id}
             className="form-control
                     block
-                    w-full
                     px-10
                     py-2
                     text-xl
