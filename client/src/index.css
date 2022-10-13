@@ -1,15 +1,21 @@
-.container {
-  width: 900px;
-  margin: 0 auto;
+@font-face {
+  font-family: "custom-font";
+  src: url("./assets/fonts/trajanpro-bold.otf") format("otf");
 }
 
-.gallery {
-  width: 900px;
-  line-height: 0;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: custom-font;
 }
 
-img {
-  width: 15%;
-  object-fit: cover;
-  cursor: pointer;
+.my-class {
+  transform:scale(1, 1);
+  transition: 1s;
+
+} 
+.my-class:hover {
+    transform:scale(1.5, 1.5);
 }
