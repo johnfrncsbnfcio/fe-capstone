@@ -2,6 +2,8 @@ import React from "react";
 import Gallery from "./components/gallery.component/Gallery";
 import './App.css';
 
+// test
+
 const App = () => {
 
 	return (
