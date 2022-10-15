@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { GalleryContext } from '../../App'
 import { INIT_REQUEST } from '../../App'
+
 import styles from './input.module.scss'
 import { FaSearch } from 'react-icons/fa'
 

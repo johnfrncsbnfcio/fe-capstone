@@ -1,4 +1,5 @@
 import React, { useReducer } from 'react'
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Galleries from './components/galleries.component/Galleries'
 import Controller from './components/controller.component/Controller'
@@ -8,6 +9,7 @@ import { FaBars } from 'react-icons/fa'
 
 import './styles/global.scss'
 import Nav from './components/nav.component/Nav'
+
 export const GalleryContext = React.createContext()
 
 export const INIT_REQUEST = 'init request';
@@ -47,8 +49,8 @@ const App = () => {
 				</Routes>
 				{/* <FaBars className={styles.floatingAction}/>  */}
 			</div>
-
 		</Router>
+
 	)
 }
 
