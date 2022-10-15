@@ -1,7 +1,7 @@
 import React from 'react'
-import './heroimage.css'
+import styles from './heroimage.module.scss'
 
-const HeroImage = ({ styleClass, value, onClick, altdata }) => {
+const HeroImage = ({ value, onClick, altdata }) => {
 
 	const HERO_IMG_URL = 'https://api.opendota.com';
 	const ATTR_ICON_URL = "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/icons/hero_";
@@ -9,7 +9,7 @@ const HeroImage = ({ styleClass, value, onClick, altdata }) => {
 	if (!altdata) {
 		return (
 			<img
-				className={styleClass}
+				className={styles.heroImage}
 				src={HERO_IMG_URL + value}
 				onClick={(event) => onClick(event)}
 				alt=""
@@ -20,7 +20,7 @@ const HeroImage = ({ styleClass, value, onClick, altdata }) => {
 	if (altdata) {
 		return (
 			<img
-				className={styleClass}
+				className={styles.heroAttr}
 				src={ATTR_ICON_URL + value}
 				onClick={(event) => onClick(event)}
 				alt=""

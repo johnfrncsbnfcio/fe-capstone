@@ -1,0 +1,33 @@
+$color-yellow: yellow;
+$color-red: red;
+$color-green: green;
+$color-orange: orange;
+$color-lime: lime;
+$color-pink: pink;
+$color-purple: purple;
+
+$color-search: rgba(138, 136, 136, 0.541);
+
+@mixin default {
+    @media only screen and (min-width: 375px){
+        @content;
+    }
+}
+
+@mixin phone {
+    @media only screen and (min-width: 425px){
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media only screen and (min-width: 768px){
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media only screen and (min-width: 1024px){
+        @content;
+    }
+}

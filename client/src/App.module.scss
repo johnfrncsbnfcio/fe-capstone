@@ -1,0 +1,14 @@
+@use './styles/mixin.scss' as mixin;
+
+@include mixin.default {
+
+    #container {
+        margin: 0 20px;
+    }
+
+    @include mixin.laptop {}
+}
+
+@include mixin.phone {}
+
+@include mixin.tablet {}

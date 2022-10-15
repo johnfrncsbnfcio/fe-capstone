@@ -1,0 +1,161 @@
+@use '../../styles/mixin.scss' as mixin;
+
+.green {
+    color: mixin.$color-green
+}
+
+@include mixin.default {
+    .gallery {
+        width: 100%;
+
+        @include mixin.tablet {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+    }
+
+    .galleryBox {
+        border: 1px solid grey;
+        margin: 5px 0px;
+        padding: 2px;
+
+        @include mixin.phone {
+            margin: 3px;
+            background: linear-gradient(35deg, rgba(20, 20, 20, 0.075) 70%, rgba(99, 97, 97, 0.178) 10%, rgba(93, 93, 95, 0.37) 100%);
+
+        }
+
+        @include mixin.tablet {
+            border-radius: 10px;
+            padding: 5px;
+            margin: 5px;
+            background: linear-gradient(360deg, rgba(20, 20, 20, 0.075) 32%, rgba(141, 135, 136, 0.178) 10%, rgba(93, 93, 95, 0.37) 100%);
+            width: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+    }
+
+    .galleryHeroImage {
+        display: inline-block;
+
+        @include mixin.tablet {
+            display: block;
+        }
+    }
+
+    .galleryAttrBox {
+        vertical-align: top;
+        display: inline-block;
+        padding: 5px;
+        width: 60%;
+        overflow: hidden;
+
+        @include mixin.phone {
+            margin: auto 0;
+        }
+
+        @include mixin.tablet {
+            width: 190px;
+        }
+
+        .galleryRoles {
+            margin-top: 3px;
+            font-size: 12px;
+            color: grey;
+
+            @include mixin.tablet {
+                color: white;
+            }
+
+            span {
+                @include mixin.tablet {
+                    color: darkgray;
+                    padding-right: 2px;
+                }
+            }
+
+            span+span {
+                @include mixin.tablet {
+                    padding-left: 2px;
+                }
+            }
+
+        }
+
+        .galleryHeroAttr {
+            // display: inline-block;
+        }
+
+        .galleryHeroName {
+            display: inline-block;
+            margin: 0 5px;
+            color: white;
+            height: 25px;
+
+
+            @include mixin.phone {
+                height: 30px;
+            }
+
+            @include mixin.tablet {
+                height: 50px;
+                vertical-align: top;
+                font-weight: 500;
+                font-size: 18px;
+                width: 100px;
+            }
+
+        }
+
+        .galleryHeroInfo::-webkit-scrollbar {
+            display: none;
+        }
+
+        .galleryHeroInfo {
+            overflow-x: scroll;
+            padding: 2px 2px 2px 0px;
+            margin: 5px 0px 0px;
+            scrollbar-width: none;
+            padding-bottom: 5px;
+            border-bottom: 1px solid darkgray;
+
+            @include mixin.tablet {
+                margin-top: 6px;
+                // box-shadow: inset 0px 0px 10px .1px rgba(0, 0, 0, 1);
+                padding: 10px 10px 10px 0px;
+                background: linear-gradient(360deg, #141313 100%, rgb(240, 238, 248) transparent);
+                border-bottom: 1px solid darkgray;
+            }
+
+            p {
+                display: inline;
+                color: whitesmoke;
+                overflow-x: scroll;
+                padding: 2px;
+                margin: 0 1px;
+                background-color: grey;
+
+                @include mixin.phone {
+                    display: inline;
+                    color: white;
+                    padding: 2px;
+                    margin: 0 1px;
+                    background-color: grey;
+                }
+            }
+        }
+
+    }
+
+}
+
+@include mixin.phone {}
+
+@include mixin.tablet {}
+
+@include mixin.laptop {}

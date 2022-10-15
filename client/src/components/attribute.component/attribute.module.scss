@@ -1,0 +1,39 @@
+@use '../../styles/mixin.scss' as mixin;
+
+@include mixin.default {
+
+    .selected {
+        opacity: 1;    
+    }
+
+    .unSelected {
+        opacity: 0.5;
+    }
+
+    .filterBox {
+        vertical-align: top;
+        float: right;
+
+        img,
+        .clearIcon {
+            display: inline-block;
+            width: 30px;
+            margin: 2px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .clearIcon {
+            font-size: 25px;
+            // border: 1px solid grey;
+            color: white;
+        }
+
+    }
+}
+
+@include mixin.phone {}
+
+@include mixin.tablet {}
+
+@include mixin.laptop {}

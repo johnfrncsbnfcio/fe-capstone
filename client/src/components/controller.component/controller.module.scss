@@ -1,0 +1,31 @@
+@use '../../styles/mixin.scss' as mixin;
+
+
+@include mixin.default {
+    .header {
+        width: 100%;
+        padding: 10px;
+        display: inline-block;
+
+        @include mixin.phone {
+            .header {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+
+        @include mixin.tablet {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        @include mixin.laptop {
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        
+    }
+}

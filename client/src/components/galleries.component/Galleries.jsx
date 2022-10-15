@@ -1,10 +1,15 @@
 import React, { useState, useContext, useEffect } from 'react'
 import { GalleryContext } from '../../App'
-import './galleries.css'
 import axios from 'axios'
 import HeroImage from '../hero-image.component/HeroImage'
+import styles from './galleries.module.scss'
+
 
 const Galleries = () => {
+
+
+// https://cdn.cloudflare.steamstatic.com/apps/dota2/videos/dota_react/heroes/renders/antimage.webm
+
 
 	const galleryContext = useContext(GalleryContext)
 	const { searchedInput, selectedAttr } = galleryContext.queryState
@@ -29,26 +34,30 @@ const Galleries = () => {
 
 	return (
 		<>
-			<div className="gallery pt-5 pb-10" id={searchedInput.length > 0 ? 'result-start' : ''}>
+			<div className={styles.gallery}>
 				{data.map((hero) => (
-					<div className="box-style relative hover:scale-125 hover:z-20" key={hero.id}>
+					<div className={styles.galleryBox} key={hero.id}>
 						<HeroImage
-							styleClass={'image'}
+							className={styles.galleryHeroImage}
 							value={hero.img}
 							onClick={() => { show(hero.localized_name) }}
 						/>
-						<div className="text-style absolute inset-0 text-bottom flex flex-col justify-end opacity-0 hover:opacity-100 duration-300 hover:m-0.5" onClick={() => { show(hero.localized_name) }}>
-							<div className="mx-auto w-full">
-								<HeroImage
-									styleClass={'w-6'}
-									altdata={true}
-									value={
-										hero.primary_attr === "agi" ? "agility.png" : 
-										hero.primary_attr === "int" ? "intelligence.png" : 
-										hero.primary_attr === "str" ? "strength.png" : ""}
-									onClick={() => { show(hero.localized_name) }}
-								/>
-								<p className="text-small pl-1">{hero.localized_name}</p>
+						<div className={styles.galleryAttrBox}>
+							<HeroImage
+								className={styles.galleryHeroAttr}
+								altdata={true}
+								value={
+									hero.primary_attr === "agi" ? "agility.png" :
+										hero.primary_attr === "int" ? "intelligence.png" :
+											hero.primary_attr === "str" ? "strength.png" : ""}
+								onClick={() => { show(hero.localized_name) }}
+							/>
+							<p className={styles.galleryHeroName}>{hero.localized_name.toUpperCase()}</p>
+							<div className={styles.roleBox}>
+								<p className={styles.galleryRoles}><span>[</span>Roles<span>]</span></p>
+								<div className={styles.galleryHeroInfo}>
+									{hero.roles.map((data, index) => <p key={index}>{data}</p>)}
+								</div>
 							</div>
 						</div>
 					</div>

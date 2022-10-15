@@ -1,0 +1,39 @@
+@use '../../styles/mixin.scss' as mixin;
+
+@include mixin.default {
+
+    .searchBox {
+        border-bottom: 1px solid grey;
+        width: fit-content;
+        padding: 2px;
+        display: inline-block;
+    }
+
+    .searchIcon {
+        display: inline-block;
+        color: grey;
+    }
+
+    .searchField {
+        outline: 0;
+        font-weight: 600;
+        color: grey;
+        display: inline-block;
+        width: 130px;
+        padding: 5px;
+        margin: auto 0;
+        background-color: transparent;
+        @include mixin.tablet {
+            width: 250px;
+        }
+    }
+
+    .searchField::-webkit-input-placeholder {
+        font-weight: 500;
+        color: mixin.$color-search;
+    }
+}
+
+
+
+@include mixin.laptop {}
