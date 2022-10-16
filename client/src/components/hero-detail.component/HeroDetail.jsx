@@ -8,7 +8,7 @@ const HeroDetail = () => {
     const URL = 'https://cdn.cloudflare.steamstatic.com/apps/dota2/videos/dota_react/heroes/renders/'
     const WEBM = '.webm'
     const PNG = '.png'
-
+    
     { !name && window.location.replace('http://localhost:3000/heroes') }
 
     return (

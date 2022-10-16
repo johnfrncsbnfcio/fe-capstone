@@ -1,6 +1,7 @@
 @use '../../styles/mixin.scss' as mixin;
 
 @include mixin.default {
+
     .heroSection {
 
         padding: 50px 10px;
@@ -106,8 +107,6 @@
                 }
 
             }
-
         }
-
     }
 }
