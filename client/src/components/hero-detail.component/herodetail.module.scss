@@ -1,11 +1,113 @@
 @use '../../styles/mixin.scss' as mixin;
 
 @include mixin.default {
-    .heroDetail {
-        width: 300px;
-        display: flex;
-        justify-content: center;
-        text-align: center;
-        padding-top: 50px;
+    .heroSection {
+
+        padding: 50px 10px;
+        z-index: -999;
+        height: 100vh;
+        overflow: hidden;
+
+        @include mixin.tablet {
+            overflow: hidden;
+        }
+
+        @include mixin.laptop {
+            margin: 0 auto;
+            margin-left: 200px;
+        }
+
+        .heroVideoBox {
+            position: relative;
+            width: 300px;
+            margin-left: 120px;
+
+            @include mixin.tablet {
+                width: 500px;
+                margin-left: 300px;
+                z-index: 99;
+            }
+
+            @include mixin.laptop {
+                width: 600px;
+                margin-left: 400px;
+            }
+        }
+
+        .heroDetailBox {
+
+            padding: 10px;
+
+            .heroName {
+                width: fit-content;
+                color: white;
+                margin: 10px 0px;
+                position: absolute;
+                font-weight: 600;
+                top: 0;
+                margin-top: 80px;
+                width: 300px;
+                z-index: -111;
+                font-size: 50px;
+
+                @include mixin.tablet {
+                    font-size: 100px;
+                }
+
+                @include mixin.laptop {
+                    width: 900px;
+                }
+            }
+
+            .heroDescription::-webkit-scrollbar {
+                display: none;
+            }
+
+            .heroDescription {
+                box-shadow: -12px 0px 37px 8px rgba(0, 0, 0, 0.55) inset;
+                -webkit-box-shadow: -12px 0px 37px 8px rgba(0, 0, 0, 0.55) inset;
+                -moz-box-shadow: -12px 0px 37px 8px rgba(0, 0, 0, 0.55) inset;
+                overflow-y: scroll;
+                height: 400px;
+                border: 0;
+                color: grey;
+
+                @include mixin.tablet {
+                    box-shadow: -12px 0px 37px 8px rgba(0, 0, 0, 0.212);
+                    -webkit-box-shadow: -12px 0px 37px 8px rgba(0, 0, 0, 0.589);
+                    -moz-box-shadow: -12px 0px 37px 8px rgba(0, 0, 0, 0.55);
+                    position: absolute;
+                    top: 450px;
+                    margin-right: 250px;
+                    height: 250px;
+                }
+
+                @include mixin.laptop {
+                    top: 340px;
+                    box-shadow: -18px 17px 30px -3px rgba(0, 0, 0, 0.75);
+                    -webkit-box-shadow: -18px 17px 30px -3px rgba(0, 0, 0, 0.75);
+                    -moz-box-shadow: -18px 17px 30px -3px rgba(0, 0, 0, 0.75);
+                    height: 300px;
+                    width: 600px;
+                }
+
+                p {
+                    margin: 10px 0px;
+                    padding-right: 50px;
+                    line-height: 25px;
+
+                    @include mixin.tablet {
+                        font-size: 25px;
+                        word-spacing: 2px;
+                        padding-left: 5px;
+                        line-height: 30px;
+                    }
+
+                }
+
+            }
+
+        }
+
     }
 }
