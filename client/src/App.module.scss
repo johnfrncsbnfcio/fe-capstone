@@ -4,6 +4,7 @@
 
     #container {
         margin: 0 20px;
+        position: relative;
     }
 
     @include mixin.laptop {}

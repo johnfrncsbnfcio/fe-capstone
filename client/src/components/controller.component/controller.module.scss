@@ -5,6 +5,7 @@
     .header {
         width: 100%;
         padding: 10px;
+        margin-top: 40px;
         display: inline-block;
 
         @include mixin.phone {
@@ -16,15 +17,12 @@
         }
 
         @include mixin.tablet {
-            width: 100%;
-            display: flex;
-            justify-content: space-around;
+            width: 80%;
+            margin-left:10%;
         }
 
         @include mixin.laptop {
-            width: 100%;
-            display: flex;
-            justify-content: space-evenly;
+            width: 80%;
         }
         
     }

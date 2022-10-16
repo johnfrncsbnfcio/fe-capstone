@@ -36,11 +36,11 @@ const Galleries = () => {
 		<>
 			<div className={styles.gallery}>
 				{data.map((hero) => (
-					<div className={styles.galleryBox} key={hero.id}>
+					<div className={styles.galleryBox} key={hero.id} onClick={() => { show(hero.localized_name) }}>
 						<HeroImage
 							className={styles.galleryHeroImage}
 							value={hero.img}
-							onClick={() => { show(hero.localized_name) }}
+							// onClick={() => { show(hero.localized_name) }}
 						/>
 						<div className={styles.galleryAttrBox}>
 							<HeroImage
@@ -50,7 +50,7 @@ const Galleries = () => {
 									hero.primary_attr === "agi" ? "agility.png" :
 										hero.primary_attr === "int" ? "intelligence.png" :
 											hero.primary_attr === "str" ? "strength.png" : ""}
-								onClick={() => { show(hero.localized_name) }}
+								onClick={(e) => { e.stopPropagation(); show(hero.primary_attr) }}
 							/>
 							<p className={styles.galleryHeroName}>{hero.localized_name.toUpperCase()}</p>
 							<div className={styles.roleBox}>
