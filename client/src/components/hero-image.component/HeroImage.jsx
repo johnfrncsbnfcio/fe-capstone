@@ -10,9 +10,8 @@ const HeroImage = ({ value, onClick, altdata }) => {
 		return (
 			<img
 				className={styles.heroImage}
-
 				src={HERO_IMG_URL + value}
-				onClick={(event) => onClick(event)}
+				// onClick={(event) => onClick(event)}
 				alt=""
 			/>
 		)
@@ -22,7 +21,6 @@ const HeroImage = ({ value, onClick, altdata }) => {
 		return (
 			<img
 				className={styles.heroAttr}
-
 				src={ATTR_ICON_URL + value}
 				onClick={(event) => onClick(event)}
 				alt=""

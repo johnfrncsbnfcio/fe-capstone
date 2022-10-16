@@ -1,0 +1,30 @@
+@use '../../styles/mixin.scss' as mixin;
+
+@include mixin.default {    
+
+    .customBox {
+        cursor: pointer;
+        border: 1px solid grey;
+        border-radius: 5px;
+        padding: 0px 5px 2px;
+        color: white;
+    }
+    .customBoxExt {
+        cursor: pointer;
+        border: 1px solid grey;
+        border-radius: 5px;
+        padding: 5px 10px;
+        color: white;
+    }
+
+    .icon, p {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    p {
+        margin: 0px 4px 1px;
+        font-size: 20px;
+    }
+
+}

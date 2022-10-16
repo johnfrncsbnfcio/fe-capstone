@@ -1,14 +1,14 @@
 import React from 'react'
 import styles from './nav.module.scss'
-import { } from 'react-icons/fa'
+import CustomIcon from '../custom-icon.component/CustomIcon'
 import { NavLink } from 'react-router-dom'
 
 const Nav = () => {
     return (
-        <nav>
-            <ul>
-                <NavLink to="/" end className="navlink">Welcome</NavLink>
-                <NavLink to="/heroes" end className="navlink">Heroes</NavLink>
+        <nav className={styles.nav}>
+            <ul className={styles.navUl}>
+                <NavLink to="/" end className={styles.navLink}><CustomIcon icon={'FaHome'} text={'Home'}/></NavLink>
+                <NavLink to="/heroes" end className={styles.navLink}><CustomIcon icon={'FaTh'} text={'Heroes'}/></NavLink>
             </ul>
         </nav>
     )

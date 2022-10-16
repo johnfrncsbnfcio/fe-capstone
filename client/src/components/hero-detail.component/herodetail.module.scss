@@ -1,0 +1,11 @@
+@use '../../styles/mixin.scss' as mixin;
+
+@include mixin.default {
+    .heroDetail {
+        width: 300px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        padding-top: 50px;
+    }
+}

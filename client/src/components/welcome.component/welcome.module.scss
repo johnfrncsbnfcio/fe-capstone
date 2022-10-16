@@ -1,3 +1,93 @@
 @use '../../styles/mixin.scss' as mixin;
 
-@include mixin.default {}
+@include mixin.default {
+    .welcome {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-image: url(https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react//home/heroes_full.jpg);
+
+        h1 {
+            color: rgba(255, 255, 255, 0.548);
+            word-wrap: break-word;
+            font-size: 50px;
+            justify-content: center;
+            margin-top: 250px;
+            text-transform: uppercase;
+            width: 300px;
+            text-align: center;
+            
+            span {
+                font-weight: 500;
+                color: white;
+            }
+        }
+
+
+        h2 {
+            font-size: 30px;
+            margin: 100px auto 0px;
+            color: white;
+        }
+
+
+        .news {
+            color: rgba(255,255,255,.7);
+            width: 300px;
+            text-align: center;
+            margin: 20px;
+
+            @include mixin.tablet {
+                width: 80%;
+            }
+
+            .newsItem::-webkit-scrollbar {
+                display: none;
+            }
+
+            .newsItem {
+                background: linear-gradient(rgba(19, 23, 28, 0) 20%, rgba(19, 23, 28, 0.733) 70%, rgb(19, 23, 28) 90%);
+                border: 1px solid grey;
+                z-index: 11;
+                opacity: .8;
+                margin: 10px 0px;
+                padding: 5px;
+                overflow-y: scroll;
+
+                @include mixin.tablet {
+                    display: inline-block;
+                    vertical-align: top;
+                    width: 30%;
+                    height: 190px;
+                    margin: 5px;
+                }
+
+                h3 {
+                    padding: 5px;
+                    font-size: 20px;
+                    font-weight: 600;
+                    text-decoration: underline;
+                }
+    
+                p {
+                    z-index: 2;
+                    font-size: 16px;
+                    text-align: justify;
+                    margin-top: 10px;
+                    height: 120px;
+                    @include mixin.tablet {
+
+                    }
+                }
+            }
+
+        }
+
+    }
+}
