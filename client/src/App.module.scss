@@ -2,8 +2,8 @@
 
 @include mixin.default {
 
-    #container {
-        margin: 0 20px;
+    .container {
+        margin: 0 auto;
         position: relative;
     }
 

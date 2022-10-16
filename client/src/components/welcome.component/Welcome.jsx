@@ -21,10 +21,12 @@ const news = [
 const Welcome = () => {
 	return (
 		<div className={styles.welcome}>
+			
 			<h1>Who will you <span>choose?</span></h1>
 			<NavLink to="/heroes" end className={styles.navLink}>
 				<CustomIcon customStyle={'cs'} icon={''} text={'View all heroes'} />
 			</NavLink>
+
 			<h2 className={styles.latest}>Latest Update</h2>
 
 			<div className={styles.news}>
@@ -37,7 +39,6 @@ const Welcome = () => {
 					)
 				})}
 			</div>
-
 		</div>
 	)
 }

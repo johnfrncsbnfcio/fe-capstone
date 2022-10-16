@@ -40,11 +40,15 @@
         .news {
             color: rgba(255,255,255,.7);
             width: 300px;
-            text-align: left;
+            text-align: center;
             margin: 20px;
 
             @include mixin.tablet {
                 width: 80%;
+            }
+
+            .newsItem::-webkit-scrollbar {
+                display: none;
             }
 
             .newsItem {
@@ -54,6 +58,7 @@
                 opacity: .8;
                 margin: 10px 0px;
                 padding: 5px;
+                overflow-y: scroll;
 
                 @include mixin.tablet {
                     display: inline-block;
@@ -71,13 +76,11 @@
                 }
     
                 p {
-
                     z-index: 2;
                     font-size: 16px;
                     text-align: justify;
                     margin-top: 10px;
                     height: 120px;
-                    overflow-y: scroll;
                     @include mixin.tablet {
 
                     }

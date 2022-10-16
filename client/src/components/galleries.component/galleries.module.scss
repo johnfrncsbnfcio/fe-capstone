@@ -139,7 +139,6 @@
                 padding: 2px;
                 margin: 0 1px;
                 background-color: grey;
-
                 @include mixin.phone {
                     display: inline;
                     color: white;

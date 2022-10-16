@@ -1,17 +1,10 @@
 import React, { useState, useContext, useEffect } from 'react'
 import { GalleryContext } from '../../App'
-
 import axios from 'axios'
 import HeroImage from '../hero-image.component/HeroImage'
 import styles from './galleries.module.scss'
 
-
 const Galleries = () => {
-
-
-// https://cdn.cloudflare.steamstatic.com/apps/dota2/videos/dota_react/heroes/renders/antimage.webm
-
-
 
 	const galleryContext = useContext(GalleryContext)
 	const { searchedInput, selectedAttr } = galleryContext.queryState
@@ -31,14 +24,15 @@ const Galleries = () => {
 	}, [searchedInput, selectedAttr])
 
 	const show = (data) => {
-		alert(data)
+		// alert(data.split("/").pop().split('.')[0])
+		window.open(`http://localhost:3000/hero/${data.split("/").pop().split('.')[0]}`)
 	}
 
 	return (
 		<>
 			<div className={styles.gallery}>
 				{data.map((hero) => (
-					<div className={styles.galleryBox} key={hero.id} onClick={() => { show(hero.localized_name) }}>
+					<div className={styles.galleryBox} key={hero.id} onClick={() => { show(hero.img) }}>
 						<HeroImage
 							className={styles.galleryHeroImage}
 							value={hero.img}
