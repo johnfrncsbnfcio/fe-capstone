@@ -25,7 +25,7 @@ const Galleries = () => {
 
 	const show = (data) => {
 		// alert(data.split("/").pop().split('.')[0])
-		window.open(`http://localhost:3000/hero/${data.split("/").pop().split('.')[0]}`)
+		window.location.replace(`http://localhost:3000/hero/${data.split("/").pop().split('.')[0]}`)
 	}
 
 	return (
@@ -46,7 +46,7 @@ const Galleries = () => {
 									hero.primary_attr === "agi" ? "agility.png" :
 										hero.primary_attr === "int" ? "intelligence.png" :
 											hero.primary_attr === "str" ? "strength.png" : ""}
-								onClick={(e) => { e.stopPropagation(); show(hero.primary_attr) }}
+								onClick={(e) => { e.stopPropagation() }}
 							/>
 							<p className={styles.galleryHeroName}>{hero.localized_name.toUpperCase()}</p>
 							<div className={styles.roleBox}>
