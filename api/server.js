@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
 });
 
 let corsOptions = {
-    origin: 'http://localhost:3000'
+    origin: ['http://localhost:3000', 'http://192.168.0.240:3000']
 };
 
 app.get('/heroes', cors(corsOptions), function (req, res) {
@@ -32,6 +32,6 @@ app.get('/heroes', cors(corsOptions), function (req, res) {
     );
 
     q ? res.json(search(heroes)) : res.json(heroes);
-});
+})
 
 app.listen(PORT_NUMBER, () => console.log('Api server running at port: ' + PORT_NUMBER));
