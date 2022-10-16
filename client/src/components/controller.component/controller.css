@@ -1,0 +1,7 @@
+header {
+    display: flex;
+    flex-wrap: wrap;
+    width: inherit;
+    margin: 20px auto 0;
+    justify-content: center;
+}

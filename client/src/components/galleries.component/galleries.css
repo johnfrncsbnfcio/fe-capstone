@@ -1,0 +1,69 @@
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    width: inherit;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+header {
+    width: 30%;
+    display: flex;
+    justify-content: flex-start;
+    margin: 30px 20px 5px;
+}
+
+#result-start {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 150px;
+}
+
+.image {
+    width: 146px;
+    object-fit: cover;
+    margin: 2px;
+}
+
+.box-style:hover {
+    cursor: pointer;
+}
+
+.text-style {
+    background: linear-gradient(rgba(0, 0, 0, 0) 50%, rgb(22 22 22 / 73%) 75%, rgb(0, 0, 0) 100%);
+    font-size: 18px;
+    line-height: 20px;
+    font-family: "Reaver", serif;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 8px;
+    padding-left: 0px;
+    text-shadow: 0px 0px 4px #000;
+}
+
+.text-style div img {
+    display: inline-block;
+    padding: 2px;
+    margin-left: 2px;
+    vertical-align: middle;
+}
+
+.text-style div p {
+    vertical-align: middle;
+    line-height: 15px;
+    display: inline-block;
+    font-size: small;
+    width: 70%;
+}
+
+.filter-box {
+    display: flex;
+    width: 20%;
+}
+
+.filter-box button {
+    font-size: 20px;
+    color: rgba(146, 130, 130, 0.603);
+}

@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react'
 import { GalleryContext } from '../../App'
+
 import axios from 'axios'
 import HeroImage from '../hero-image.component/HeroImage'
 import styles from './galleries.module.scss'
@@ -9,6 +10,7 @@ const Galleries = () => {
 
 
 // https://cdn.cloudflare.steamstatic.com/apps/dota2/videos/dota_react/heroes/renders/antimage.webm
+
 
 
 	const galleryContext = useContext(GalleryContext)
